@@ -25,8 +25,8 @@ test("property enumeration", function() {
         keys.push(propertyName);
         values.push(person[propertyName]);
     }
-    ok(keys.equalTo(['__','__','__']), 'what are the property names of the object?');
-    ok(values.equalTo(['__',__,__]), 'what are the property values of the object?');
+    ok(keys.equalTo(['name','age','unemployed']), 'what are the property names of the object?');
+    ok(values.equalTo(['Amory Blaine',102,true]), 'what are the property values of the object?');
 });
 
 test("hasOwnProperty", function() {
@@ -37,8 +37,8 @@ test("hasOwnProperty", function() {
     for (propertyName in b) {
         keys.push(propertyName);
     }
-    equal(__, keys.length, 'how many elements are in the keys array?');
-    deepEqual([__, __], keys, 'what are the properties of the array?');
+    equal(2, keys.length, 'how many elements are in the keys array?');
+    deepEqual([aprop, bprop], keys, 'what are the properties of the array?');
 
     // hasOwnProperty returns true if the parameter is a property directly on the object,
     // but not if it is a property accessible via the prototype chain.
